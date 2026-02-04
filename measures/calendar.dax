@@ -1,6 +1,8 @@
 Calendar = 
-VAR MinDate = MIN('chocolate_sales'[Date])
-VAR MaxDate = MAX('chocolate_sales'[Date])
+VAR 
+    MinDate = MIN('chocolate_sales'[Date])
+VAR 
+    MaxDate = MAX('chocolate_sales'[Date])
 RETURN
 ADDCOLUMNS(
     CALENDAR(MinDate,MaxDate),
