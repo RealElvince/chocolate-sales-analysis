@@ -1,0 +1,10 @@
+Best_Sales_Person_Name = 
+VAR TopTable = 
+    TOPN(
+        1,
+        VALUES('chocolate_sales'[Sales_Person]),
+        [Total_Sales],
+        DESC
+    )
+RETURN
+    CONCATENATEX(TopTable, 'chocolate_sales'[Sales_Person], ", ")
