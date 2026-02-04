@@ -1,0 +1,23 @@
+Product_Performance_Message = 
+VAR 
+    YoYGrowth = [YoY Sales Growth %]
+VAR 
+    Ranking  =
+         RANKX (
+        ALL ( 'chocolate_sales'[Product] ),
+        [Total_Sales],
+        ,
+        DESC
+    )
+RETURN
+SWITCH (
+    TRUE (),
+    Ranking <= 5 && YoYGrowth > 0,
+        "Top Performer"
+        & UNICHAR(10)
+        & "Sales up by "
+        & FORMAT ( YoYGrowth, "0.0%" ),
+    Ranking <= 5,
+        "Consistent Performer",
+    "Needs Improvement"
+)
