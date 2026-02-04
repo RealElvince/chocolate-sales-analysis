@@ -1,0 +1,10 @@
+YoY Sales Growth % = 
+VAR CurrentSales =
+    SUM ( 'chocolate_sales'[Amount] )
+VAR LastYearSales =
+    CALCULATE (
+        SUM ('chocolate_sales'[Amount] ),
+        SAMEPERIODLASTYEAR ( 'Calendar'[Date] )
+    )
+RETURN
+DIVIDE ( CurrentSales - LastYearSales, LastYearSales )
