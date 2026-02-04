@@ -1,0 +1,5 @@
+Total_Boxes_Shipped = 
+VAR No_Of_Boxes_Shipped =
+    SUM('chocolate_sales'[Boxes_Shipped])
+RETURN
+No_Of_Boxes_Shipped
