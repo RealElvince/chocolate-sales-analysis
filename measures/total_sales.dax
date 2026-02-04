@@ -1,4 +1,5 @@
 Total_Sales = 
-VAR Sum_Sales = SUM('chocolate_sales'[Amount])
+VAR 
+    Sum_Sales = SUM('chocolate_sales'[Amount])
 RETURN
 Sum_Sales
