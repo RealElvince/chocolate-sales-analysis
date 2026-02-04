@@ -1,0 +1,10 @@
+Top_5_Product_Flag = 
+VAR ProductRank =
+    RANKX (
+        ALL ( 'chocolate_sales'[Product] ),
+        CALCULATE ( SUM ( 'chocolate_sales'[Amount] ) ),
+        ,
+        DESC
+    )
+RETURN
+IF ( ProductRank <= 5, "Yes", "No" )
