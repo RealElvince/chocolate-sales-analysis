@@ -1,0 +1,12 @@
+Calendar = 
+VAR MinDate = MIN('chocolate_sales'[Date])
+VAR MaxDate = MAX('chocolate_sales'[Date])
+RETURN
+ADDCOLUMNS(
+    CALENDAR(MinDate,MaxDate),
+    "Year",YEAR([Date]),
+    "Month_Number",MONTH([Date]),
+    "Month_Name", FORMAT([Date],"MMMM"),
+    "YearMonth", FORMAT ( [Date], "YYYY-MM" ),
+    "Quarter", "Q" & FORMAT ( [Date], "Q" )
+)
