@@ -1,0 +1,16 @@
+Performance_Color = 
+VAR YoYGrowth = [YoY Sales Growth %]
+VAR Ranks =
+    RANKX (
+        ALL ( 'chocolate_sales'[Product] ),
+        [Total_Sales],
+        ,
+        DESC
+    )
+RETURN
+SWITCH (
+    TRUE (),
+    Ranks <= 5 && YoYGrowth > 0, "#2ECC71",   
+    Ranks <= 5, "#F1C40F",                    
+    "#E74C3C"                               
+)
