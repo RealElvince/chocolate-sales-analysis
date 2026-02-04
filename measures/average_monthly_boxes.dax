@@ -1,0 +1,10 @@
+Average_Monthly_Boxes = 
+VAR Total_Months = 
+    VALUES('Calendar'[YearMonth])
+ VAR AverageMonthlyBoxes =
+    AVERAGEX(
+        Total_Months,
+        CALCULATE(SUM('chocolate_sales'[Boxes_Shipped]))
+    )
+RETURN
+AverageMonthlyBoxes
